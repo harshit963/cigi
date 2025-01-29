@@ -12,7 +12,7 @@ const LocationsPage = () => {
     const fetchLocations = async () => {
       try {
         console.log("Fetching locations from backend...");
-        const res = await axios.get('http://localhost:8000/api/locations');
+        const res = await axios.get('https://cigi.onrender.com/api/locations');
         console.log("API Response:", res.data);
         setLocations(res.data);
       } catch (error) {
@@ -22,7 +22,7 @@ const LocationsPage = () => {
     fetchLocations();
   }, []);
   const handleSave = () => {
-    axios.get('http://localhost:8000/api/locations').then((res) => setLocations(res.data));
+    axios.get('https://cigi.onrender.com/api/locations').then((res) => setLocations(res.data));
   };
 
   const handleEdit = (location: any) => {
@@ -31,7 +31,7 @@ const LocationsPage = () => {
 
   const handleDelete = async (locationId: string) => {
     try {
-      await axios.delete(`http://localhost:8000/api/locations/${locationId}`);
+      await axios.delete(`https://cigi.onrender.com/api/locations/${locationId}`);
       setLocations(locations.filter(location => location._id !== locationId));
     } catch (error) {
       console.error('Error deleting location', error);
