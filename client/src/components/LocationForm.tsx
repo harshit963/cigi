@@ -20,10 +20,10 @@ const LocationForm: React.FC<LocationFormProps> = ({ onSave, locationId, initial
     try {
       if (locationId) {
         // Update Location
-        await axios.put(`https://cigi.onrender.com/api/locations/${locationId}`, { name, pincode });
+        await axios.put(`http://localhost:8000/api/locations/${locationId}`, { name, pincode });
       } else {
         // Create Location
-        await axios.post('https://cigi.onrender.com/api/locations', { name, pincode });
+        await axios.post('http://localhost:8000/api/locations', { name, pincode });
       }
       onSave();
       setName('');

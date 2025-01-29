@@ -22,7 +22,7 @@ const Signup = () => {
         }
 
         try {
-            const response = await axios.post('https://cigi.onrender.com/auth/signup', {
+            const response = await axios.post('http://localhost:8000/auth/signup', {
                 name,
                 email,
                 password,
